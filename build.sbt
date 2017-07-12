@@ -6,7 +6,7 @@ scalaVersion := "2.11.8"
 
 val sparkVersion = "2.0.1"
 
-mainClass in Compile := Some("HelloWorld")
+mainClass in Compile := Some("spark_streaming")
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion,
