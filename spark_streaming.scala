@@ -55,7 +55,7 @@ object spark_streaming {
   def setSparkStreaming(args: Array[String]): DStream[String]={
     System.setProperty("hadoop.home.dir","C:\\winutil")
     val Array(zkQuorum, group, topics, numThreads) = args
-    val sparkConf = new SparkConf().setMaster("local[*]").setAppName("KafkaWordCount")
+    val sparkConf = new SparkConf().setMaster("local[*]").setAppName("KafkaOrderStatus")
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     ssc.checkpoint("checkpoint")
     val topicMap = topics.split(",").map((_, numThreads.toInt)).toMap
